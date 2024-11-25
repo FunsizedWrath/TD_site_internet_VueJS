@@ -1,16 +1,18 @@
 import Vue from 'vue';
 import App from './App.vue';
-import Router from 'vue-router';
+import VueRouter from 'vue-router'; // Assurez-vous d'importer VueRouter
 import TexteImageComponent from './components/TexteImageComponent.vue';
+import ContactForm from './components/ContactForm.vue';
 
 Vue.config.productionTip = false;
 
-Vue.use(Router);
+Vue.use(VueRouter); // Utilisez VueRouter
 
-const router = new Router({
+const router = new VueRouter({
   mode: 'history',
   routes: [
     { path: '/', name: 'accueil', component: TexteImageComponent },
+    { path: '/contact', name: 'contact', component: ContactForm }
   ]
 });
 

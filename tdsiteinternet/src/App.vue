@@ -1,19 +1,17 @@
 <template>
   <div id="app">
     <NavigationComponent/>
-    <TexteImageComponent/>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import NavigationComponent from './components/NavigationComponent.vue';
-import TexteImageComponent from './components/TexteImageComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    NavigationComponent,
-    TexteImageComponent
+    NavigationComponent
   }
 }
 </script>
