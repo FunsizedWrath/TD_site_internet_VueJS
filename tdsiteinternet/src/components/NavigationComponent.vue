@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
     <button @click="navigateTo('accueil')">Accueil</button>
-    <button>API</button>
+    <button @click="navigateTo('api')">API</button>
     <button @click="navigateTo('contact')">Contact</button> <!-- Nouveau bouton -->
     <button></button>
   </div>
