@@ -32,13 +32,32 @@ export default {
         };
     },
     methods: {
-        submitForm() {
-            // Handle form submission
-            console.log('Form submitted:', this.form);
-            // Reset form
-            this.form.name = '';
-            this.form.email = '';
-            this.form.message = '';
+        async submitForm() {
+            const webhookUrl = 'https://discord.com/api/webhooks/1309485318969495572/IHGFgyq3BCa0c4heSp4vTMNnAgrJFsqkomH3xjoG_WcZo7ip8MztNOPuHyljpna8nMsb';
+            const payload = {
+                content: `Nom: ${this.form.name}\nEmail: ${this.form.email}\nMessage: ${this.form.message}`
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert('Message envoyé avec succès !');
+                    this.form.name = '';
+                    this.form.email = '';
+                    this.form.message = '';
+                } else {
+                    alert('Une erreur est survenue lors de l\'envoi du message.');
+                }
+            } catch (error) {
+                alert('Une erreur est survenue lors de l\'envoi du message.');
+            }
         }
     }
 };
@@ -48,9 +67,6 @@ export default {
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .form-group {
@@ -70,15 +86,14 @@ textarea {
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 </style>
