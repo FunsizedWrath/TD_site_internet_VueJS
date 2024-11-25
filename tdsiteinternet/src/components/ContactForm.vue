@@ -1,4 +1,3 @@
-@ -0,0 +1,84 @@
 <template>
     <div class="contact-form">
         <h2>Contactez-nous !</h2>
