@@ -1,32 +1,33 @@
 <template>
   <div class="api-component">
     <h2>API Request</h2>
-    <form @submit.prevent="fetchData">
-      <div class="form-group">
-        <label for="apiUrl">API URL:</label>
-        <input type="text" id="apiUrl" v-model="apiUrl" required />
-      </div>
-      <div class="form-group">
-        <label for="method">Method:</label>
-        <select id="method" v-model="method">
-          <option value="GET">GET</option>
-          <option value="POST">POST</option>
-          <option value="PUT">PUT</option>
-          <option value="DELETE">DELETE</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="params">Parameters (JSON format):</label>
-        <textarea id="params" v-model="params"></textarea>
-      </div>
-      <button type="submit">Send Request</button>
-    </form>
-    <div class="result">
-    <div v-if="result">
+    <div class="api-container">
+      <form @submit.prevent="fetchData" class="api-form">
+        <div class="form-group">
+          <label for="apiUrl">API URL:</label>
+          <input type="text" id="apiUrl" v-model="apiUrl" required />
+        </div>
+        <div class="form-group">
+          <label for="method">Method:</label>
+          <select id="method" v-model="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="params">Parameters (JSON format):</label>
+          <textarea id="params" v-model="params"></textarea>
+        </div>
+        <button type="submit">Send Request</button>
+      </form>
+      <div class="result">
         <h3>Result:</h3>
-      <pre>{{ result }}</pre>
-    </div>
-      
+        <div v-if="result">
+          <pre>{{ result }}</pre>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -68,8 +69,24 @@ export default {
 
 <style scoped>
 .api-component {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+.api-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.api-form {
+  flex: 1;
+}
+
+.result {
+  flex: 1;
+  max-height: 300px; /* Limite la hauteur maximale */
+  overflow: auto; /* Ajoute une barre de défilement si nécessaire */
 }
 
 .form-group {
@@ -89,29 +106,21 @@ input, select, textarea {
 
 button {
   padding: 10px 20px;
-  background-color: #4c9daf;
+  background-color: #4CAF50;
   color: white;
   border: none;
-
   cursor: pointer;
 }
 
-
 button:hover {
-  background-color: #457aa0;
-}
-
-.result {
-  margin-top: 20px;
-  max-height: 300px;
-  overflow: auto;
+  background-color: #45a049;
 }
 
 pre {
   background-color: #f4f4f4;
   padding: 10px;
   border: 1px solid #ddd;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  white-space: pre-wrap; /* Permet de gérer les longues lignes */
+  word-wrap: break-word; /* Permet de gérer les longues lignes */
 }
 </style>
