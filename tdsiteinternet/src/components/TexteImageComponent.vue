@@ -1,9 +1,11 @@
 <template>
     <div>
         <h1>Mon Composant</h1>
-        <input type="image" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Submit" width="48" height="48">
-        <input type="text" v-model="inputValue" placeholder="Tapez quelque chose..."/>
-        <p v-show="inputValue">Vous avez tapé : {{ inputValue }}</p>
+        <img src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_640.jpg" alt="Placeholder" />
+        <p>{{ message }}</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCLgkClCDXpCTFNmbz7Mnzaq6xzL_xTXOBmg&s" alt="Placeholder" />
+        <p>{{ message }}</p>
+
     </div>
 </template>
 
@@ -12,7 +14,6 @@ export default {
     data() {
         return {
             message: 'Hello World',
-            inputValue: ''
         };
 }
 };

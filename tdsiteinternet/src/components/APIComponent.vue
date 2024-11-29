@@ -22,8 +22,11 @@
       <button type="submit">Send Request</button>
     </form>
     <div class="result">
-      <h3>Result:</h3>
+    <div v-if="result">
+        <h3>Result:</h3>
       <pre>{{ result }}</pre>
+    </div>
+      
     </div>
   </div>
 </template>

@@ -30,4 +30,9 @@ button {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+.navigation{
+  gap: 10px;
+  justify-content: center;
+}
 </style>
