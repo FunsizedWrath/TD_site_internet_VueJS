@@ -89,7 +89,7 @@ button {
   background-color: #4c9daf;
   color: white;
   border: none;
-  
+
   cursor: pointer;
 }
 
@@ -100,11 +100,15 @@ button:hover {
 
 .result {
   margin-top: 20px;
+  max-height: 300px;
+  overflow: auto;
 }
 
 pre {
   background-color: #f4f4f4;
   padding: 10px;
   border: 1px solid #ddd;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 </style>
