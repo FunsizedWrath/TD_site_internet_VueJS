@@ -3,7 +3,7 @@
     <button @click="navigateTo('accueil')">Accueil</button>
     <button @click="navigateTo('api')">API</button>
     <button @click="navigateTo('contact')">Contact</button> <!-- Nouveau bouton -->
-    <button></button>
+    <button @click="navigateTo('bonus')"> Bonus </button>
   </div>
 </template>
 

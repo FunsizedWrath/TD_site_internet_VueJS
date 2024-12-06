@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'; // Assurez-vous d'importer VueRouter
 import TexteImageComponent from './components/TexteImageComponent.vue';
 import ContactForm from './components/ContactForm.vue';
 import APIComponent from './components/APIComponent.vue';
+import BonusComponent from './components/BonusComponent.vue';
 
 Vue.config.productionTip = false;
 
@@ -14,7 +15,8 @@ const router = new VueRouter({
   routes: [
     { path: '/', name: 'accueil', component: TexteImageComponent },
     { path: '/contact', name: 'contact', component: ContactForm },
-    { path: '/api', name: 'api', component: APIComponent }
+    { path: '/api', name: 'api', component: APIComponent },
+    { path: '/bonus', name: 'bonus', component: BonusComponent }
   ]
 });
 
