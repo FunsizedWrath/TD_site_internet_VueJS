@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <h1>Mon Composant</h1>
-        <img src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_640.jpg" alt="Placeholder" />
-        <p>{{ message }}</p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCLgkClCDXpCTFNmbz7Mnzaq6xzL_xTXOBmg&s" alt="Placeholder" />
-        <p>{{ message }}</p>
-
+    <div id="container">
+        <div id="img">
+            <img v-bind:src="img" alt="Placeholder" />
+        </div>
+        <div id="txt">
+            <p>{{ message }}</p>
+        </div>
     </div>
 </template>
 
@@ -13,6 +13,7 @@
 export default {
     data() {
         return {
+            img: 'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_640.jpg',
             message: 'Hello World',
         };
 }
@@ -20,4 +21,25 @@ export default {
 </script>
 
 <style scoped>
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin: 10px;
+}
+
+#img {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    order: 2;
+}
+
+#txt {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    order: 1;
+}
 </style>
