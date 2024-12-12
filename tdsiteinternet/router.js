@@ -5,7 +5,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../components/TexteImageComponent.vue'),
+    component: () => import('../components/Accueil.vue'),
   },
   {
     path: '/contact',
@@ -18,5 +18,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+console.log(router);
 
 export default router;

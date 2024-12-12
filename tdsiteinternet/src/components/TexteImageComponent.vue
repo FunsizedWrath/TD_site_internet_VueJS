@@ -1,7 +1,7 @@
 <template>
     <div id="container">
         <div id="img">
-            <img v-bind:src="img" alt="Placeholder" />
+            <img v-bind:src="img" alt="Placeholder" v-bind:height="height"/>
         </div>
         <div id="txt">
             <p>{{ message }}</p>
@@ -11,22 +11,19 @@
 
 <script>
 export default {
-    data() {
-        return {
-            img: 'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_640.jpg',
-            message: 'Hello World',
-        };
+  props: ['message', 'img', 'height'],
+  setup(props) {
+    console.log(props.message)
+  }
 }
-};
 </script>
 
 <style scoped>
 #container {
     display: flex;
-    width: 100%;
-    height: 100%;
     align-items: center;
     margin: 10px;
+    border: 1px solid black;
 }
 
 #img {
