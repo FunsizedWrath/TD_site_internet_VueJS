@@ -3,11 +3,13 @@
     <h2>API Request</h2>
     <div class="api-container">
       <form @submit.prevent="fetchData" class="api-form">
+        <!-- url -->
         <div class="form-group">
           <label for="apiUrl">API URL:</label>
           <input type="text" id="apiUrl" v-model="apiUrl" required />
         </div>
         <div class="form-group">
+           <!-- ajout des options de requête -->
           <label for="method">Method:</label>
           <select id="method" v-model="method">
             <option value="GET">GET</option>
@@ -33,6 +35,7 @@
 </template>
 
 <script>
+// par default, on utilise la méthode GET
 export default {
   data() {
     return {
@@ -55,7 +58,7 @@ export default {
         if (this.method !== 'GET' && this.params) {
           options.body = this.params;
         }
-
+// fetch l'API
         const response = await fetch(this.apiUrl, options);
         const data = await response.json();
         this.result = JSON.stringify(data, null, 2);
@@ -85,8 +88,8 @@ export default {
 
 .result {
   flex: 1;
-  max-height: 300px; /* Limite la hauteur maximale */
-  overflow: auto; /* Ajoute une barre de défilement si nécessaire */
+  max-height: 300px; 
+  overflow: auto; 
 }
 
 .form-group {
@@ -120,7 +123,7 @@ pre {
   background-color: #f4f4f4;
   padding: 10px;
   border: 1px solid #ddd;
-  white-space: pre-wrap; /* Permet de gérer les longues lignes */
-  word-wrap: break-word; /* Permet de gérer les longues lignes */
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
 }
 </style>

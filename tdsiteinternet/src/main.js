@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import VueRouter from 'vue-router'; // Assurez-vous d'importer VueRouter
+import VueRouter from 'vue-router'; 
 import AccueilComponent from './components/AccueilComponent.vue';
 import ContactForm from './components/ContactForm.vue';
 import APIComponent from './components/APIComponent.vue';
@@ -8,8 +8,8 @@ import BonusComponent from './components/BonusComponent.vue';
 
 Vue.config.productionTip = false;
 
-Vue.use(VueRouter); // Utilisez VueRouter
-
+Vue.use(VueRouter); // Utilise VueRouter
+// Définit les routes
 const router = new VueRouter({
   mode: 'history',
   routes: [

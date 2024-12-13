@@ -33,8 +33,10 @@ export default {
     },
     methods: {
         async submitForm() {
+            // URL du webhook Discord
             const webhookUrl = 'https://discord.com/api/webhooks/1309485318969495572/IHGFgyq3BCa0c4heSp4vTMNnAgrJFsqkomH3xjoG_WcZo7ip8MztNOPuHyljpna8nMsb';
             const payload = {
+                // forme du message envoyé sur Discord
                 content: `Nom: ${this.form.name}\nEmail: ${this.form.email}\nMessage: ${this.form.message}`
             };
 

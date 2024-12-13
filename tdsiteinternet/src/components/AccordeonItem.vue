@@ -1,9 +1,12 @@
 <template>
   <div class="accordeon-item" :class="{ active: isOpen }">
+    <!-- si on click on active la méthode toggle -->
     <div class="accordeon-header" @click="toggle">
       <slot name="header"></slot>
+      <!-- si isopen est vrai - si fermé + -->
       <span class="toggle-symbol">{{ isOpen ? '-' : '+' }}</span>
     </div>
+    <!-- v-if pour afficher le contenu si isopen -->
     <div class="accordeon-content" v-if="isOpen">
       <slot name="content"></slot>
     </div>
@@ -11,6 +14,7 @@
 </template>
 
 <script>
+// accordeon par default fermé
 export default {
   name: 'AccordeonItem',
   data() {
@@ -19,6 +23,7 @@ export default {
     };
   },
   methods: {
+    // méthode pour ouvrir ou fermer l'accordeon
     toggle() {
       this.isOpen = !this.isOpen;
     }
