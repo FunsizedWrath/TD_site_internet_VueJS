@@ -90,6 +90,7 @@ export default {
 }
 
 .pokemon-container {
+  /* afficher les pokemons sur une ligne */
   display: flex;
   justify-content: space-between;
   gap: 20px;
